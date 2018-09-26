@@ -12,10 +12,10 @@ export class CsvParserProxy {
 
     parseByHeader(): DataRow[] {
         // cast: true
-        return syncParser.default(this.csvText, {columns: true});
+        return syncParser.default(this.csvText, {cast: true, columns: true});
     }
 
     parseByRow() {
-        return syncParser.default(this.csvText);
+        return syncParser.default(this.csvText, {cast: true});
     }
 }
